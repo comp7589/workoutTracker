@@ -8,9 +8,8 @@ var MONGODB_URI = process.env.MONGODB_URI || "monogodb://localhost/workout";
 
 const options = {
     useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    family: 4 // Use IPv4, skip trying IPv6
+    // useCreateIndex: true,
+    useFindAndModify: false, 
   };
 
 
@@ -27,7 +26,7 @@ app.use(express.static("public"));
 // });
 
 //db_DEPLOY
-mongoose.connect(MONGODB_URI,options);
+mongoose.connect(MONGODB_URI, options);
 
 // routes
 app.use(require("./routes/api.js"));
