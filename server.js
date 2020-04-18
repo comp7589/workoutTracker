@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const PORT = 3000;
 const app = express();
 //if deployed, use the deployed database. Otherwise..
-var MONGODB_URI = process.env.MONGODB_URI || "monogodb://localhost/workout";
+var MONGODB_URI = "mongodb://ryanC:compton5@ds031597.mlab.com:31597/heroku_8rrngzgp";
 
 const options = {
     useNewUrlParser: true,
