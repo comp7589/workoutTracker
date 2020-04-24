@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const PORT = 3000;
 const app = express();
 //if deployed, use the deployed database. Otherwise..
-var MONGODB_URI = process.env.MONGODB_URI || "monogodb://localhost/workout";
+// var MONGODB_URI = process.env.MONGODB_URI || "monogodb://localhost/workout";
 
 const options = {
     useNewUrlParser: true,
@@ -26,8 +26,10 @@ app.use(express.static("public"));
 // });
 
 //db_DEPLOY
-mongoose.connect(MONGODB_URI);
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 // routes
 app.use(require("./routes/api.js"));
 app.use(require("./routes/view.js"));
