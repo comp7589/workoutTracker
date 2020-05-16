@@ -26,7 +26,7 @@ app.use(express.static("public"));
 // });
 
 //db_DEPLOY
-mongoose.connect(process.env.MONGODB_URI || "mongodb://heroku_8rrngzgp:Compt@n5@ds031597.mlab.com:31597/heroku_8rrngzgp", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://heroku_8rrngzgp:password12@ds031597.mlab.com:31597/heroku_8rrngzgp", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
